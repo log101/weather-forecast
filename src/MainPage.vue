@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="w-100 bg-dark text-light rounded shadow blur d-flex flex-column justify-content-around" style="--mdb-bg-opacity: 0.5;">
-                    <BasicData v-if="currentData" :currentData="currentData"></BasicData>
+                    <BasicData v-if="currentData" :currentData="currentData" :dailyData="dailyData"></BasicData>
                     <HourlyWeather v-if="hourlyData" :data="hourlyData"></HourlyWeather>
                 </div>
             </div> 

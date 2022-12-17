@@ -5,6 +5,11 @@
 
     </div>
 
+    <div v-if="dailyData" class="w-100 p-3 text-light">
+        <span class="text-light opacity-75">{{ }}</span>
+
+    </div>
+
     <!-- <h6 class="display-7 m-3">{{ getDate(currentData.dt) }}</h6> -->
     <div class="h-100 w-100 p-3 d-flex flex-row">
         <div class="card bg-dark m-2" style="text-align: center;">
@@ -43,10 +48,16 @@
 export default {
     props: {
         currentData: Object,
+        dailyData: Object
     },
     computed: {
         currentTemperature() {
+            console.log(this.dailyData.list[0]);
             return Math.round(this.currentData.main.temp)
+        },
+        getDate(unix) {
+            let data = new Date(unix * 1000);
+            return data.toLocaleString();
         }
     }
 }
